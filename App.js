@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { StyleSheet, View, Button, FlatList } from 'react-native';
+import { StatusBar } from 'expo-status-bar';
 
 import GoalList from './components/goalList';
 import GoalInput from './components/goalInput';
@@ -37,6 +38,8 @@ function onDeleteHandler(id) {
   
   
   return (
+    <>
+    <StatusBar style='light' />
     <View style={styles.appContainer}>
       <Button title='ADD NEW GOAL' color='#5e0acc' onPress={onInputHandler}/>
       <GoalInput visible={isVisible} onAddGoal={addGoalHandler} cancel={endVisible} />
@@ -55,6 +58,7 @@ function onDeleteHandler(id) {
 
 
     </View>
+    </>
   );
 }
 
